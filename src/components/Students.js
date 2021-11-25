@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
-import { deleteNote } from "../actions"
-import Note from "./Note"
+import { deleteStudent } from "../actions"
+import Student from "./Student"
 import "../App.css";
 
-class Notes extends Component {
+class Students extends Component {
 	render () {
 		return (
 			<div className="App">
 				<div>
 					{
-						this.props.notes.map ((note) =>
-							<Note note={note} key={note.id} delete={this.props.deleteNote}/>
+						this.props.students.map ((student) =>
+							<Student student={student} key={student.id} delete={this.props.deleteStudent}/>
 						)
 					}
 				</div>
@@ -21,19 +21,19 @@ class Notes extends Component {
 }
 
 function mapStateToProps (state, props) {
-	console.log ("Notes.js", state)
+	console.log ("Students.js", state)
 	return {
-		notes: state
+		students: state
 	}
 }
 
 function mapDispatchToProps (dispatch) {
 	return {
-		deleteNote: (id) => dispatch (deleteNote (id)),
+		deleteStudent: (id) => dispatch (deleteStudent (id)),
 	}
 }
 
 export default connect (
 	mapStateToProps,
 	mapDispatchToProps
-) (Notes);
+) (Students);

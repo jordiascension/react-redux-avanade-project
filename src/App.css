@@ -31,14 +31,14 @@ body {
   to { transform: rotate(360deg); }
 }
 
-.Note {
+.Student {
   padding: 1em;
   margin: 0.5em;
   border: 1px solid lightgrey;
   border-radius: 1em;
 }
 
-.NoteControls {
+.StudentControls {
   width: 30%;
   float: right;
 }

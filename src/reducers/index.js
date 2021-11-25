@@ -1,47 +1,49 @@
-import { GET_NOTES, GET_NOTE,
-    ADD_NOTE, UPDATE_NOTE, DELETE_NOTE  } from "../actions"
+import { GET_STUDENTS, GET_STUDENT,
+    ADD_STUDENT, UPDATE_STUDENT, DELETE_STUDENT  } from "../actions"
 
-let initialNotes = [
+let initialStudents = [
     {
         id: "8xf0y6ziyjabvozdd253nd",
-        timestamp: 1467166872634,
-        content: "This is an example",
+        name: "Pepe",
+        surname: "Soto",
+        age: 28,
       },
        {
         id: "6ni6ok3ym7mf1p33lnez",
-        timestamp: 1468479767190,
-        content: "This thing works",
+        name: "Francisco",
+        surname: "Albiol",
+        age: 18,
       }
 ];
 
-let reducer = (state = initialNotes, action) => {
+let reducer = (state = initialStudents, action) => {
     switch (action.type) {
-        case GET_NOTES:         
+        case GET_STUDENTS:         
           return state;
         
-        case GET_NOTE:
-          console.log("get note: ", action.id)
+        case GET_STUDENT:
+          console.log("get student: ", action.id)
           return state.filter(n => n.id === action.id);
         
-        case ADD_NOTE:
-          action.note.id = action.note.id || uniqueId();
-          console.log("add note: ", action.note, state)
-           state.push(action.note);
-           console.log("after push note: ", action.note, state)
+        case ADD_STUDENT:
+          action.student.id = action.student.id || uniqueId();
+          console.log("add student: ", action.student, state)
+           state.push(action.student);
+           console.log("after push student: ", action.student, state)
           return state;
         
-          case UPDATE_NOTE:
-          console.log("update notes: ", action.note)
-          return  state.map( (note) => {                  
-                if(note.id !== action.note.id) {
-                    return note;
+          case UPDATE_STUDENT:
+          console.log("update student: ", action.student)
+          return  state.map( (student) => {                  
+                if(student.id !== action.student.id) {
+                    return student;
                 } 
-                return action.note;    
+                return action.student;    
             })
           
        
-          case DELETE_NOTE:
-          console.log("delete note: ", action.id)
+          case DELETE_STUDENT:
+          console.log("delete student: ", action.id)
           return state.filter(n => n.id !== action.id);
           
           default:

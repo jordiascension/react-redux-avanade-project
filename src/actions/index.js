@@ -1,40 +1,40 @@
-export const GET_NOTES = "GET_NOTES"
-export const GET_NOTE = "GET_NOTE"
-export const ADD_NOTE = "ADD_NOTE"
-export const UPDATE_NOTE = "UPDATE_NOTE"
-export const DELETE_NOTE = "DELETE_NOTE"
+export const GET_STUDENTS = "GET_STUDENTS"
+export const GET_STUDENT = "GET_STUDENT"
+export const ADD_STUDENT = "ADD_STUDENT"
+export const UPDATE_STUDENT = "UPDATE_STUDENT"
+export const DELETE_STUDENT = "DELETE_STUDENT"
 
 
-export function getNotes () {
+export function getStudents () {
     return {
-      type: GET_NOTES
+      type: GET_STUDENTS
     }
   }
 
-export function getNote ( id ) {
+export function getStudent ( id ) {
   return {
-    type: GET_NOTE,
+    type: GET_STUDENT,
     id
   }
 }
 
-export function addNote ( note ) {
+export function addStudent ( student ) {
   return {
-    type: ADD_NOTE,
-    note
+    type: ADD_STUDENT,
+    student
   }
 }
 
-export function updateNote ( note ) {
+export function updateStudent ( student ) {
   return {
-    type: UPDATE_NOTE,
-    note
+    type: UPDATE_STUDENT,
+    student
   }
 }
 
-export function deleteNote ( id ) {
+export function deleteStudent ( id ) {
   return {
-    type: DELETE_NOTE,
+    type: DELETE_STUDENT,
     id
   }
 }
